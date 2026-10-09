@@ -1,126 +1,161 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday My Love ❤️</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      background-color: #ffe6eb;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 20px;
-      overflow: hidden;
-    }
-    .card {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      max-width: 350px;
-      width: 100%;
-      position: relative;
-    }
-    h1 {
-      color: #ff4d6d;
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-    }
-    p {
-      color: #555;
-      font-size: 1.1rem;
-      margin-bottom: 25px;
-      line-height: 1.5;
-    }
-    .gif-container img {
-      width: 150px;
-      border-radius: 15px;
-      margin-bottom: 20px;
-    }
-    .btn-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      position: relative;
-      min-height: 60px;
-    }
-    button {
-      padding: 12px 25px;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: all 0.2s ease;
-    }
-    .btn-yes {
-      background-color: #ff4d6d;
-      color: white;
-      z-index: 2;
-    }
-    .btn-no {
-      background-color: #cccccc;
-      color: #333;
-      position: absolute;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love ❤️</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a0b2e 0%, #0d0614 50%, #000000 100%);
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            text-align: center;
+        }
+        .container {
+            background: rgba(30, 15, 50, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(147, 112, 219, 0.3);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            max-width: 600px;
+            width: 90%;
+            margin: 20px;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #d1b3ff;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(209, 179, 255, 0.5);
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #e6ccff;
+            margin-bottom: 25px;
+            white-space: pre-line;
+            text-align: left;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            position: relative;
+            min-height: 60px;
+        }
+        button {
+            padding: 12px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #yesBtn {
+            background-color: #8a2be2;
+            color: white;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+        }
+        #yesBtn:hover {
+            background-color: #9932cc;
+            transform: scale(1.05);
+        }
+        #noBtn {
+            background-color: #333333;
+            color: #b3b3b3;
+            position: absolute;
+        }
+        .next-btn {
+            background-color: #b19cd9;
+            color: #1a0b2e;
+            margin-top: 20px;
+            box-shadow: 0 0 15px rgba(177, 156, 217, 0.5);
+        }
+        .next-btn:hover {
+            background-color: #cbb4ff;
+            transform: scale(1.05);
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="card" id="card">
-    <div class="gif-container">
-      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExazh2eml6dXZyYnh0Zmxnd29xd2tzZndwZWdvanVjc2JvM3Y4Nmc1YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LpDmM2w9a451d3M336/giphy.gif" alt="Cute Bear">
-    </div>
-    
-    <h1 id="question">عيد ميلاد سعيد يا أحسن حاجة وقعات ليا! ❤️</h1>
-    <p id="message">عندي ليك سؤال مهم... واش كاتبغيني قد ما كاتبغيك؟ 🥺</p>
-
-    <div class="btn-container">
-      <button class="btn-yes" id="yesBtn" onclick="acceptLove()">أه كاتبغيك بزاف! 🥰</button>
-      <button class="btn-no" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">لا 😜</button>
-    </div>
-  </div>
-
-  <script>
-    let yesScale = 1;
-
-    function moveButton() {
-      const noBtn = document.getElementById('noBtn');
-      const yesBtn = document.getElementById('yesBtn');
-
-      // تكبير زر "أه" فكل مرة يحاول يضغط على "لا"
-      yesScale += 0.3;
-      yesBtn.style.transform = `scale(${yesScale})`;
-
-      // تحريك زر "لا" لمكان عشوائي
-      const x = Math.random() * (window.innerWidth - 100) - (window.innerWidth / 2 - 50);
-      const y = Math.random() * (window.innerHeight - 100) - (window.innerHeight / 2 - 50);
-
-      noBtn.style.transform = `translate(${x}px, ${y}px)`;
-    }
-
-    function acceptLove() {
-      const card = document.getElementById('card');
-      card.innerHTML = `
-        <div class="gif-container">
-          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTZ6a241Zm51eDRiYmd6cXJ0ZnU2Zzh5eW5xNnU1a3Z6Yzh1NW5rciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KZXp433M6CagM/giphy.gif" alt="Happy">
+    <div class="container" id="mainContainer">
+        <!-- Step 1: Initial Question -->
+        <div id="step1">
+            <h1>Happy birthday daddy</h1>
+            <button class="next-btn" onclick="goToQuestion()">Next</button>
         </div>
-        <h1 style="color: #ff4d6d;">عارفها! 🥳❤️</h1>
-        <p style="margin-top: 15px;">كل عام وأنت بألف خير يا أحلى إنسان فحياتي. الله يخليك ليا ودائماً مع بعضياتنا وإن شاء الله العيد الجاي نكونو قراب! 🎂✨</p>
-      `;
-    }
-  </script>
 
+        <!-- Step 2: Do you love me? -->
+        <div id="step2" class="hidden">
+            <h1>Do you love me?</h1>
+            <div class="btn-container" id="btnContainer">
+                <button id="yesBtn" onclick="showLoveMessage()">Yes</button>
+                <button id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">No</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Love Letter -->
+        <div id="step3" class="hidden">
+            <p>Happy birthday, my love. ❤️🎂
+
+Today is all about celebrating the beautiful soul that you are and the happiness you bring into my life. I wish you a year full of success, peace, happiness, and all the beautiful things your heart desires. You deserve so much goodness in this world, and I hope life gives you every reason to smile.
+
+I want you to know how much you mean to me. You are not just someone I love; you are someone who has a special place in my heart that nobody else could ever take. Loving you has become one of the most beautiful parts of my life, and even though I may not always find the perfect words to express my feelings, I hope you can feel how genuine my love for you is.
+
+I love your presence in my life, the little things about you, the moments we share, and even the simplest conversations that somehow become special just because they are with you. I love the way you make me feel, and I cherish the memories we have created together. More than anything, I wish to see you happy, to watch you grow, achieve your dreams, and become the person you have always wanted to be.
+
+If there is one thing I wish for us, it is to keep choosing each other, to keep understanding each other, and to build something beautiful that becomes stronger with time. I want us to share more birthdays, more laughter, more memories, and more moments that remind us why we fell in love in the first place.
+
+Thank you for being part of my life and for giving my heart someone so special to care about. No matter what this new year of your life brings, I hope you always remember that there is someone who genuinely loves you, believes in you, and wishes the very best for you.
+
+Happy birthday, baby. 🥹❤️ You mean more to me than words could ever explain, and I hope this new chapter of your life brings you as much happiness as you have brought into mine.
+
+I love you, today, tomorrow, and in all the little moments in between. Happy birthday, my favourite person. ❤️🎀</p>
+            <button class="next-btn" onclick="showFinalStep()">Next</button>
+        </div>
+
+        <!-- Step 4: Final Message -->
+        <div id="step4" class="hidden">
+            <h1>Call me a video call to eat your cake 🎂🥹🌸</h1>
+        </div>
+    </div>
+
+    <script>
+        function goToQuestion() {
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+        }
+
+        function moveNoButton() {
+            const noBtn = document.getElementById('noBtn');
+            const x = Math.random() * 200 - 100;
+            const y = Math.random() * 150 - 75;
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        function showLoveMessage() {
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.remove('hidden');
+        }
+
+        function showFinalStep() {
+            document.getElementById('step3').classList.add('hidden');
+            document.getElementById('step4').classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>
